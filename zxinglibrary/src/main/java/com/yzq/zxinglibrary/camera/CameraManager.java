@@ -168,8 +168,10 @@ public final class CameraManager {
     public void switchFlashLight(CaptureActivityHandler handler) {
         //  Log.i("打开闪光灯", "openFlashLight");
 
+        if (camera == null) return;
         Camera.Parameters parameters = camera.getParameters();
 
+        if (parameters == null) return;
         Message msg = new Message();
 
         String flashMode = parameters.getFlashMode();
